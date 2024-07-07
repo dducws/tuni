@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyp
+*.pyo
+*.pym
+*.pyp
+*.pyw
+*.pyc
+.Python
+env/
+venv/
+ENV/
+venv.bak/
+*.env
+
+# VS Code
+.vscode/
+
+# JetBrains (IntelliJ, PyCharm, etc.)
+.idea/
