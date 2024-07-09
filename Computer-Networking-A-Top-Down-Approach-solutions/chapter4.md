@@ -84,15 +84,15 @@ YES, routers have multiple IP addresses. The number of IP addresses a router has
 
 
 ### R13. 
-The 32-bit binary equivalent of the IP address 223.1.3.27 is 11011111 00000001 00000011 00011011
+The 32-bit binary equivalent of the IP address 223.1.3.27 is 11011111 00000001 00000011 00011011.
 
 
-### R14. 
-Host is my laptop 
-**IP address:** 192.168.129.209 
-**Subnet mask:** 255.255.255.0 
-**Default router:** 192.168.129.234 
-**DNS server:** 192.168.129.234
+### R14.
+#### Host Information (My Mac):
+- IP Address: 192.168.129.209
+- Subnet Mask: 255.255.255.0
+- Default Router: 192.168.129.234
+- DNS Server: 192.168.129.234
 
 
 ### R15. 
@@ -119,5 +119,61 @@ Therefore, **three forwarding tables** will be indexed to move the datagram from
 ### R18.
 The five PCs at home obtain their IP addresses through the wireless **router's built-in DHCP server**, which assigns private IP addresses from a reserved range (e.g., 192.168.0.0/24). 
 
-**YES, the wireless router uses NAT**. This is because NAT translates the private IP addresses of the five PCs to a single public IP address assigned by the ISP which helps conserve the limited pool of IPv4 addresses and provide a layer of security by hiding the internal network structure. 
+**YES, the wireless router uses NAT**. This is because NAT translates the private IP addresses of the five PCs to a single public IP address assigned by the ISP which helps not only in conserve the limited pool of IPv4 addresses, but also provide a layer of security by hiding the internal network structure. 
 
+
+## Problems 
+
+### P13. 
+Subnet 1: 223.1.17.0/26 -> 223.1.17.0 - 223.1.17.63 (64 addresses)
+Subnet 2: 223.1.17.64/25 -> 223.1.17.64 - 223.1.17.191 (128 addresses)
+Subnet 3: 223.1.17.192/28 -> 223.1.17.192 - 223.1.17.207 (16 addresses)
+
+
+### P16. 
+For a subnet with prefix 128.119.40.128/26, any IP addresses in the range from 128.119.40.128 - 128.119.40.191 can be assigned to this network. 
+
+The four subnets from the ISP block of addresses 128.119.40.64/26 are: 
+1. 128.119.40.64/28 
+2. 128.119.40.80/28 
+3. 128.119.40.96/28 
+4. 128.119.40.112/28
+
+
+### P17.
+
+![Figure 4.17](./4.17.png)
+
+#### a. Network Addresses
+- **Subnet A**: 214.97.254.0/24 -> 214.97.254.0 - 214.97.254.255 (256 addresses)
+- **Subnet B**: 214.97.255.0/25 -> 214.97.255.0 - 214.97.255.127 (128 addresses)
+- **Subnet C**: 214.97.255.128/25 -> 214.97.255.128 - 214.97.255.255 (128 addresses)
+- **Subnet D**: 214.97.254.0/30 -> 214.97.254.0 - 214.97.254.3 (4 addresses)
+- **Subnet E**: 214.97.254.4/30 -> 214.97.254.4 - 214.97.254.7 (4 addresses)
+- **Subnet F**: 214.97.254.8/30 -> 214.97.254.8 - 214.97.254.11 (4 addresses)
+
+#### b. Forwarding Tables
+
+**Router 1**:
+
+| **Longest Prefix Match**              | **Outgoing Interface** |
+|---------------------------------------|------------------------|
+| 11010110 01100001 11111110            | Subnet A              |
+| 11010110 01100001 11111110 000000     | Subnet D              |
+| 11010110 01100001 11111110 00001      | Subnet F              |
+
+**Router 2**:
+
+| **Longest Prefix Match**              | **Outgoing Interface** |
+|---------------------------------------|------------------------|
+| 11010110 01100001 11111111            | Subnet C              |
+| 11010110 01100001 11111110 00001      | Subnet F              |
+| 11010110 01100001 11111110 00000      | Subnet E              |
+
+**Router 3**:
+
+| **Longest Prefix Match**              | **Outgoing Interface** |
+|---------------------------------------|------------------------|
+| 11010110 01100001 11111110 000000     | Subnet D              |
+| 11010110 01100001 11111110 00000      | Subnet E              |
+| 11010110 01100001 11111111            | Subnet B              |
