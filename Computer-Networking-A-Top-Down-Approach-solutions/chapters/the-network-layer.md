@@ -2,8 +2,8 @@
 
 ## Review Questions
 
-
 ### R1.
+
 The name of a network-layer packet is a **datagram**.
 
 ### Fundamental Differences between a Router and Link-Layer Switch
@@ -16,20 +16,24 @@ The name of a network-layer packet is a **datagram**.
 
 
 ### R2. 
+
 The two most important network-layer functions in a datagram network are **forwarding** and **routing**. 
 The three most important network-layer functions in a virtual-circuit network are the same two functions as in a datagram network (**forwarding** and **routing**) and **maintaining connection state information**.
 
 
 ### R3. 
+
 - Forwarding refers to the router-local action of transferring a packet from an input link interface to the appropriate output link interface.
 - Routing refers to the network-wide process that determines the end-to-end paths that packets take from source to destination.
 
 
 ### R7. 
+
 The reason each input port in a high-speed router stores a shadow copy of the forwarding table is to allow quick local decisions for forwarding packets. This way, the router doesn't need to send a request to the central processor for each packet, which helps in avoiding delays and minimizing the possibility of bottleneck at the central processor. 
 
 
 ### R8. 
+
 Three types of switching fabrics in a router are: **via memory**, **via a bus**, and **via an interconnection network**.
 
 1. **Switching via Memory:**
@@ -76,19 +80,23 @@ NO. While a faster switch fabric can reduce delays and improve overall throughpu
 
 
 ### R11. 
+
 Head-of-the-line (HOL) blocking is a phenomenon that occurs in **input ports** when a packet at the front of the input queue prevents other packets in the same queue from being transferred through the switch fabric, even if their respective output ports are free. This happens because the packet at the front of the queue is destined for an output port that is currently busy or congested, blocking subsequent packets from moving forwards. 
 
 
 ### R12. 
+
 YES, routers have multiple IP addresses. The number of IP addresses a router has depends on the number of interfaces or ports it has. 
 
 
 ### R13. 
+
 The 32-bit binary equivalent of the IP address 223.1.3.27 is 11011111 00000001 00000011 00011011.
 
 
 ### R14.
-#### Host Information (My Mac):
+
+#### An example of host Information:
 - IP Address: 192.168.129.209
 - Subnet Mask: 255.255.255.0
 - Default Router: 192.168.129.234
@@ -96,6 +104,7 @@ The 32-bit binary equivalent of the IP address 223.1.3.27 is 11011111 00000001 0
 
 
 ### R15. 
+
 An IP datagram sent from a source host to a destination host through 3 routers will travel over **eight interfaces** in total. Here's the detailed breakdown: 
 
 1. **Source to Router 1:** 
@@ -117,6 +126,7 @@ Therefore, **three forwarding tables** will be indexed to move the datagram from
 
 
 ### R18.
+
 The five PCs at home obtain their IP addresses through the wireless **router's built-in DHCP server**, which assigns private IP addresses from a reserved range (e.g., 192.168.0.0/24). 
 
 **YES, the wireless router uses NAT**. This is because NAT translates the private IP addresses of the five PCs to a single public IP address assigned by the ISP which helps not only in conserve the limited pool of IPv4 addresses, but also provide a layer of security by hiding the internal network structure. 
@@ -125,12 +135,14 @@ The five PCs at home obtain their IP addresses through the wireless **router's b
 ## Problems 
 
 ### P13. 
+
 Subnet 1: 223.1.17.0/26 -> 223.1.17.0 - 223.1.17.63 (64 addresses)
 Subnet 2: 223.1.17.64/25 -> 223.1.17.64 - 223.1.17.191 (128 addresses)
 Subnet 3: 223.1.17.192/28 -> 223.1.17.192 - 223.1.17.207 (16 addresses)
 
 
 ### P16. 
+
 For a subnet with prefix 128.119.40.128/26, any IP addresses in the range from 128.119.40.128 - 128.119.40.191 can be assigned to this network. 
 
 The four subnets from the ISP block of addresses 128.119.40.64/26 are: 
@@ -142,7 +154,7 @@ The four subnets from the ISP block of addresses 128.119.40.64/26 are:
 
 ### P17.
 
-![Figure 4.17](./4.17.png)
+![Figure 4.17](/utils/4.17.png)
 
 #### a. Network Addresses
 - **Subnet A**: 214.97.254.0/24 -> 214.97.254.0 - 214.97.254.255 (256 addresses)
