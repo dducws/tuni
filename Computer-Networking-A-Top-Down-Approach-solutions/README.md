@@ -1,6 +1,6 @@
 # Computer Networking: A Top-Down Approach Solutions
 
-![Book Cover](Computer-Networking-A-Top-Down-Approach-solutions/utils/book_cover.png)
+![Book Cover](utils/book_cover.png)
 
 ## Introduction
 
