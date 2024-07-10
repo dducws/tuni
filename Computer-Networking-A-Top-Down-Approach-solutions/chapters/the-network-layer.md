@@ -154,7 +154,7 @@ The four subnets from the ISP block of addresses 128.119.40.64/26 are:
 
 ### P17.
 
-![Figure 4.17](/utils/4.17.png)
+![Figure 4.17](Computer-Networking-A-Top-Down-Approach-solutions/utils/4.17.png)
 
 #### a. Network Addresses
 - **Subnet A**: 214.97.254.0/24 -> 214.97.254.0 - 214.97.254.255 (256 addresses)
